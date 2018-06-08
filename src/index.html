@@ -6,7 +6,13 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <input type= “text” id="textencode" name="caja1"><!-- EVENTOS DEL DOM-cajas donde el usuario ingrea texto a cifrar-->
+      <input type= “text” id="textdecode" name="caja2">
+      <input type="button" value="encodejs" onclick="encodejs()"> <!-- EVENTOS DEL DOM-al hacer clic ocurre la codificacion-->
+      <input type="button" value="decodejs" onclick="decodejs()">
+
+    </div>
     <script src="cipher.js"></script>
     <script src="index.js"></script>
   </body>
