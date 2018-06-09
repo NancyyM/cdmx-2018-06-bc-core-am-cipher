@@ -1,4 +1,4 @@
-window.cipher = {  //ESTO YA FUNCIONA BIEN :)
+window.cipher = {
 	encode(offset, string){//funcion codificar con parametros, offset es el num de posiciones a recorrer, string es la cadena de texto
 		let mensaje ='';
 		for (let i = 0;i<string.length; i++) {
@@ -19,3 +19,5 @@ window.cipher = {  //ESTO YA FUNCIONA BIEN :)
 	}
 };
 
+
+//GRACIAS! Atte. NANCY MEJIA GOMEZ

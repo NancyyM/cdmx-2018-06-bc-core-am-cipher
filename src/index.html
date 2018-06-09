@@ -7,13 +7,19 @@
   </head>
   <body>
     <div id="root">
-      <input type= “text” id="textencode" name="caja1"><!-- EVENTOS DEL DOM-cajas donde el usuario ingrea texto a cifrar-->
-      <input type= “text” id="textdecode" name="caja2">
-      <input type="button" value="encodejs" onclick="encodejs()"> <!-- EVENTOS DEL DOM-al hacer clic ocurre la codificacion-->
-      <input type="button" value="decodejs" onclick="decodejs()">
+      <label>Ingresa mensaje a cifrar(en mayusculas)</label>
+        <input type="text" id="textencode" name="caja1"><!-- EVENTOS DEL DOM-cajas donde el usuario ingresa texto a cifrar-->
+        <input type="button" value="encode" onclick="encodejs();"><br> <!-- EVENTOS DEL DOM-al hacer clic ocurre la codificacion-->
+      <label>Ingresa mensaje a decifrar(en mayusculas)</label>
+        <input type="text" id="textdecode" name="caja2"><!-- caja donde el usuario ingresa el texto a decifrar-->
+        <input type="button" value="decode" onclick="decodejs();"><br><br><!--al hacer clic ocurre la decodificacion-->
+      <label>Ingresa tu numero favorito</label>
+      <input type="text" id="positions" name="number">
 
     </div>
     <script src="cipher.js"></script>
     <script src="index.js"></script>
   </body>
 </html>
+
+<!--GRACIAS! Atte. NANCY MEJIA GOMEZ-->
