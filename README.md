@@ -1,17 +1,4 @@
-# Cifrado César
-
-## Preámbulo
-
-Está próxima la fecha del cumpleaños de tu flacx (novix) y estás organizando una
-fiesta sorpresa. Para organizar la fiesta has creado un grupo de Whatsapp junto
-con amigos y familiares.
-
-Un gran problema es que pones tu alarma para levantarte temprano, sin embargo
-(como supondrás) eso nunca sucede y tu flacx es quien termina apagando la alarma
-y "de casualidad" revisando tus mensajes. Debido a que es algo sorpresa, decides
-crear una aplicación que te permita enviar mensajes cifrados y que las demás
-personas (partícipes de la fiesta) puedan tener una interfaz para
-descifrarlo. Así que ahora te toca aplicar tus superpoderes 😎
+# App Cifrado César
 
 ## Introducción
 
@@ -26,289 +13,144 @@ El emperador Julio César lo usaba para enviar órdenes a sus generales en los
 campos de batalla, es una de las técnicas más simples y más usadas para cifrar
 un mensaje.
 
-Por ejemplo si usáramos un desplazamiento de 3:
+## Objetivo del producto
 
-* Alfabeto sin cifrar: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
-* Alfabeto cifrado: D E F G H I J K L M N O P Q R S T U V W X Y Z A B C
+Satisfacer la necesidad del usuario mediante un producto web atractivo visualmente
+y facil de utilizar para crear una experiencia amigable que materialice el deseo 
+de comunicarse con privacidad y rapidéz.
 
-Actualmente todos los cifrados de sustitución alfabética simple, se descifran
-con facilidad y en la práctica no ofrece mucha seguridad en la comunicación,
-pero el cifrado César muchas veces puede formar parte de sistemas más complejos
-de codificación, como el cifrado Vigenère, e incluso tiene aplicación en el
-sistema ROT13.
+## Definición del producto
 
-## Objetivos
+Este producto web está implementado en JavaScript y HTML5, con algunos estilos de 
+CSS y también con ayuda del framewoork Bootstrap para hacerlo reponsivo.
 
-El objetivo principal de aprendizaje de este proyecto es tener tu primera
-experiencia construyendo una aplicación web usando tus conocimientos de **User Experience Designer** y de **JavaScript developer**. Esto incluye diseñar un producto
-_pensando en los usuarios_, construir una interfaz, escuchar eventos básicos del
-DOM, escribir lógica para llevar a cabo el cifado/descifrado, tests unitarios
-básicos para comprobar (y documentar) dicha lógica, y finalmente manipulación
-del DOM para mostrar (escribir) los resultados.
+Consiste de 4 archivos:
+1. index.htlm: Es mi archivo de marcado de texto donde se define la parte de estructura de mi página web.
+2. index.js: Archivo que me ayuda a hacer la interacción de mi página web.
+3. cipher.js: Achivo que almacena el codigo funcional encargado de hacer el cifrado y decifrado del texto.
+4. style.css: Archivo que carga todos los estilos de mi pagina web.
 
-Para completar el proyecto tendrás que familiarizarte con conceptos como
-[valores, tipos, variables](https://github.com/Laboratoria/curricula-js/tree/v2.x/topics/javascript/01-basics),
-[control de flujo](https://github.com/Laboratoria/curricula-js/tree/v2.x/topics/javascript/02-flow-control)
-y [tests unitarios](https://github.com/Laboratoria/curricula-js/tree/v2.x/topics/testing).
+### Fase 1
 
-Esperamos que en este proyecto puedas _pensar en el usuario_, entendiendo quién y cuál(es) es su nececidad. La creación de este producto va a resolver esa(s) necesidad(es) y qué mejor que hacerlo de la mejor forma. Que sea totalmente lo que nuestro usuario necesita.
+En la documentacion del proyecto se menciona que se realice un producto imaginando 
+que _"Está próxima la fecha del cumpleaños de tu flacx (novix) y estás organizando 
+una fiesta sorpresa. Para organizar la fiesta has creado un grupo de Whatsapp junto 
+con amigos y familiares."_
+Por supuesto que refiriendonos mayormente a un público joven, en _onda_, y al que le 
+gusta organizar fiestas sorpresa, nos centramos en un cierto rango de edad que oscila 
+entre los 14 - 25 años aproximadamente. Es natural que a los usuarios jóvenes debemos 
+ofrecerles un producto novedoso que llame su atención; con colores llamativos y divertidos 
+que no parezcan sacados de la época de los 80's; un producto que satisfaga su necesidad 
+de una forma rápida y con una interfáz facil de utilizar, ya que recordemos que estamos 
+en la época donde si una pagina no es funcional simplemente el usuario aprieta el boton 
+"atrás" del navegador, ingresa en el buscador algunas palabras clave y ya tiene miles de 
+resultados más en cola que esperan ser visitados, asi que no podemos darnos el lujo de 
+que el usuario se aburra en nuestro sitio porque se le dificulta utilizarlo o simplemente 
+_no sabe como utilizarlo_ y prefiere buscar otras opciones.
 
-También es importante que puedas organizarte teniendo en cuenta el tiempo y los recursos
-disponibles. Es la primera vez que evaluaremos tus habilidades blandas, pero debes
-considerar que son habilidades que probablemente ya has utilizado en distintas
-experiencias de tu vida. Lo importante es que realices el proyecto de manera
-integral.
+### Fase 2
 
-## Consideraciones generales
+Precisamente por todo lo anterior, en el proceso de **UX & UI** me he centrado en 
+ofrecer un producto muy fácil de utilizar antes que todo lo demas; con colores bonitos 
+pero a la vez frescos y divertidos para los usuarios adolescentes-jovenes; sin menús 
+desplegables ni apartados donde tengan que manipular demasiado, ya que recordemos que 
+a su edad una de las cosas mas importantes para ellos es comunicarse con sus amigos de 
+forma rapida; sin botones de acciones adicionales o información irelevante, ya que aparte 
+de que no les interesa, puede hacer el sitio mas sobrecargado con cosas innecesarias.
+La interfáz es clara, asi que deberían poder utilizarla sin ningun problema, los botones 
+y las cajas son lo suficientemente visibles y con informacion básica necesaria que les 
+permite intuir facilmente para que sirve cada elemento de la aplicación.
 
-La lógica del proyecto debe estar implementada completamente en JavaScript (ES6).
-En este proyecto NO está permitido usar librerías o frameworks, sólo
-[vanilla JavaScript](https://medium.com/laboratoria-how-to/vanillajs-vs-jquery-31e623bbd46e).
+## Implementación del producto
 
-No se debe utilizar la _pseudo-variable_ `this`.
+El producto ya implementado consiste de:
+1. Un area de texto que contiene la introducción básica para que el usuario identifique 
+rapidamente para que sirve la página, y otra area de instrucciones para que sepa como jugar.
+2. Una caja de texto donde el usuario ingresa su texto a codificar o decodifiar.
+3. Un selector que consta de números del 1 al 99 para que el usuario seleccione su número 
+favorito (este número es la cantidad de posiciones que el texto se va a desplazar en el 
+alfabeto, y dependerá de la acción que realize el usuario: 
+ - codificar: el texto se moverá n posiciones hacia la derecha en el alfabeto.
+ - decodificar: el texto se moverá n posiciones hacia la izquierda en el alfabeto. 
+4. Botones de acción:
+- Codificar: Localizado del lado izquierdo, consta de una función que almacena el texto 
+ingresado en la caja, luego almacena el número de posiciones seleccionado, y finalmente 
+ejecuta la acción de desplazar hacia la derecha letra por letra en el alfabeto el número 
+de posiciones que se ha seleccionado.
+- Decodificar: Localizado del lado derecho, consta de una función que almacena el texto 
+ingresado en la caja, luego almacena el número de posiciones seleccionado, y finalmente 
+ejecuta la acción de desplazar hacia la izquierda letra por letra en el alfabeto el número 
+de posiciones que se ha seleccionado.
+5. Una etiqueta de texto donde se desplegará el texto ya trabajado con la función que 
+previamente seleccionó el usuario. 
 
-Los tests unitarios deben cubrir un mínimo del 70% de _statements_, _functions_
-y _lines_, y un mínimo del 50% de _branches_. El _boilerplate_ ya contiene el
-setup y configuración necesaria para ejecutar los tests (pruebas) así como _code
-coverage_ para ver el nivel de cobertura de los tests usando el comando `npm
-test`.
+**NOTAS:**
+En el selector de número, decidí que fuera un _select_, ya que este tiene predefinido 
+un valor de uno, y asi en caso de que el usuario se le olvidara ingresar un número no 
+tronará el programa; cosa que si me ocurría con una caja de texto donde el usuario ingresaba 
+manualmente un número, pero cuando por cualquier razón olvidaba ingresarlo y seleccionaba 
+la opción de codificar/decodificar el texto... el programa simplemente no ejecutaba nada 
+porque no se habia previamente ingresado un offset, asi que ahí ya tenía yo un problema :( .
+En mi ultima etiqueta donde se deplega el texto, no es posible que el usuario escriba 
+texto, esta etiqueta simplemente desplega resultados.
 
-El _boilerplate_ incluye tests (pruebas) de ejemplo como punto de partida.
+## Preguntas
 
-Para comenzar este proyecto tendrás que hacer un _fork_ y _clonar_ este
-repositorio que contiene el _boilerplate_.
+* ¿quiénes son los principales usuarios de producto? 
+Adolescentes-jóvenes
+* ¿cuáles son los objetivos de estos usuarios en relación con el producto?
+Pienso que su principal objetivo con respecto al producto es que les ofrezca una forma de
+comunicación efectiva que les ayude a mantener la privacidad de su información para asi
+poder comunicarse solamente con quien ellos decidan.
+* ¿cómo crees que el producto que estás creando les está resolviendo sus problemas?
+Ayudandoles a cifrar y decifrar mensajes con una clave de desplazamiento que ellos mismos
+decidan y manteniendo la seguridad y privacidad de sus conversaciones.
 
-El _boilerplate_ contiene una estructura de archivos como punto de partida así
-como toda la configuración de dependencias y tests de ejemplo:
+## Extras. Testeo con mi familia
 
-```text
-./
-├── .editorconfig
-├── .eslintrc
-├── .gitignore
-├── README.md
-├── package.json
-├── src
-│   ├── cipher.js
-│   ├── index.html
-│   ├── index.js
-│   └── style.css
-└── test
-    ├── cipher.spec.js
-    ├── headless.js
-    └── index.html
-```
+Yo personalmente me di cuenta que desde la definición del producto, que éste estaba indicado
+para personas principalmente jóvenes, así que una vez que tuve la maquetación terminada
+decidí implementarla inmediatamente, pero una vez que terminé de darle los estilos, decidí
+probar el programa ya terminado con dos de mis hermanas, mi novio y mi mamá.
+Los resultados fueron los siguientes:
 
-El _boilerplate_ incluye tareas que ejecutan [eslint](https://eslint.org/) y
-[htmlhint](https://github.com/yaniswang/HTMLHint) para verificar el `HTML` y
-`JavaScript` con respecto a una guías de estilos. Ambas tareas se ejecutan
-automáticamente antes de ejecutar las pruebas (tests) cuando usamos el comando
-`npm run test`. En el caso de `JavaScript` estamos usando un archivo de
-configuración de `eslint` que se llama `.eslintrc` que contiene un mínimo de
-información sobre el parser que usar (qué version de JavaScript/ECMAScript), el
-entorno (browser en este caso) y las [reglas recomendadas (`"eslint:recommended"`)](https://eslint.org/docs/rules/).
-En cuanto a reglas/guías de estilo en sí,
-usaremos las recomendaciones _por defecto_ de tanto `eslint` como `htmlhint`.
+Julieta Mejía, hermana, 11 años.
+A ella le encantó, independientemente de la interfáz gráfica, no le importó si tenía
+instrucciones porque ni siquiera las leyó, inmediatamente ella ingresó unas cuantas palabras
+en la caja de texto y seleccionó un número que tampoco le importó porque solamente lo eligió
+al azar, y cuando la aplicación le mostro su resultado obviamente eran palabras y letras
+ilegibles que ella no estaba segura si realmente eran el resultado de su mensaje cifrado,
+asi que copió el texto y lo pegó en la caja de texto, y ahora utilizó la opción de "decifrar"
+y al arrojarle el resultado se emocionó mucho y me dijo "¡si sirve! ¡pasamela a mi celular!" :D
+y sacó su celular para que le pasara la "aplicación" hasta que le dije que no se podía :( 
 
-## Parte obligatoria
+Ariana Mejía, hermana, 21 años.
+Ella si observó mas los colores y me dijo "¡órale, esta chida!" :P
+Despues de cifrar su nombre y despues decifrarlo me dijo que "estaría mas chido si se pudiera 
+poner en el whatsApp :'D " jaja tal vez despues eso se pueda implementar como ella dice..
+Pero despues me dio algunas observaciones en cuanto a los colores, que los que había yo
+puesto estaban "medio feos" y ya despues tuve que buscar en internet mezclas de colores bonitas.
 
-### Definición del producto
+Dalila Gomez, mamá, 43 años.
+Cuando le expliqué con manzanitas que hacía la aplicación no lo podía creer, y se imaginó 
+que para hacer todo el proceso "ha de estar bien dificil" y despues de ponerse a jugar con
+mis hermanas cifrando y decifrando palabras a ver si ellas "adivinaban que decía" como por 
+aproximadamente 2 horas, ya le pregunté que qué le modificaría, añadiría o quitaría y me
+dijo que nada, que "así esta bien".
+Pero lo que noté con ella fue que en la segunda vez que intentó codificar, como es muy
+despistada se le olvidaba ingresar el numero, solamente escribia el texto y le apretaba en
+"codificar" y pues la aplicación no hacía nada, por eso fué que despues modifiqué el codigo
+para poner un select y que tuviera predefinido un uno por defecto para que independientemente
+de que se le olvidara seleccionar un número, aun así hiciera la codificación/decodificación.
 
-En el `README.md` cuéntanos cómo pensaste en los usuarios al desarrollar tu
-producto y cuál fue tu proceso para definir el producto final a nivel de
-experiencia y de interfaz.
+A. Alejandro Enciso, novio, 28 años.
+A él si le pareció funcional pero lo que primero me preguntó fue "¿Como le hiciste?" y ya
+despues de explicarle me dió algunas recomendaciones en cuanto al tamaño de las cajas y los
+botones para que se vieran "mas bonitos", como que estuvieran sombreados, un poquito mas 
+grandes, y las cajas con efecto en 3D, y después de que me dijo eso empezé a buscar efectos
+en internet hasta que encontré el que me recomendó. Y aparte de que le gustó me dijo que
+"estaría bien que fuera una aplicación para ya asi no estar entrando al navegador y buscar
+la pagina donde se va a alojar" y tambien para que asi ya cifrara todos sus mensajes y 
+cuando yo agarrara su celular no leyera sus conversaciones :O tal vez despues le tome la palabra.
 
-* quiénes son los principales usuarios de producto
-* cuáles son los objetivos de estos usuarios en relación con el producto
-* cómo crees que el producto que estás creando les está resolviendo sus
-  problemas
-
-Para llevar tus conocimientos a otro nivel en UX:
-
-* puedes investigar y aplicar algunas
-de las técnicas y herramientas relacionadas al proceso de diseño como
-entrevistas y testeos con usuarios de tus sketches o prototipos.
-
-### UI
-
-La interfaz debe permitir al usuario:
-
-* elegir un `offset` indicando cuántas posiciones queremos que el cifrado
-  desplace cada caracter
-* insertar un mensaje (texto) que queremos cifrar
-* ver el resultado del mensaje cifrado
-* insertar un mensaje (texto) a descifrar
-* ver el resultado del mensaje descifrado
-
-Estos puntos lejos de ser funcionalidades, en términos de UI debes pensarlos como elementos que estalecer la interacción con tu usuario.
-
-### Scripts / Archivos
-
-* `README.md`: debe explicar cómo descargar, instalar y ejecutar la aplicación
-  así como una introducción a la aplicación, su funcionalidad y decisiones de
-  diseño que tomaron.
-* `src/index.html`: este es el punto de entrada a tu aplicación. Este archivo
-  debe contener to _markup_ (HTML) e incluir el CSS y JavaScript necesario.
-* `src/cipher.js`: acá debes implementar el objeto cipher, el cual debe estar
-  _exportado_ en el objeto global (`window`). Este objeto (`cipher`) debe
-  contener dos métodos:
-  - `cipher.encode(offset, string)`: `offset` es el número de posiciones que
-    queremos mover a la derecha en el alfabeto y `string` el mensaje (texto)
-    que queremos cifrar.
-  - `cipher.decode(offset, string)`: `offset` es el número de posiciones que
-    queremos mover a la izquierda en el alfabeto y `string` el mensaje
-    (texto) que queremos decifrar.
-* `src/index.js`: acá debes escuchar eventos del DOM, invocar `cipher.encode()`
-  o `cipher.decode()` según sea necesario y actualizar el resultado en la UI.
-* `test/cipher.spec.js`: este archivo contiene algunos tests de ejemplo y acá
-  tendrás que implementar los tests para `cipher.encode()` y `cipher.decode()`.
-
-## Hacker edition
-
-No estás limitada a implementar solo la parte obligatoria. Te sugerimos crear
-también una función `cipher.createCipherWithOffset()` que reciba un `offset` y
-devuelva un nuevo objeto con dos métodos (`encode` y `decode`) que solo reciban
-el string y usen el `offset` que se pasó a `createCipherWithOffset` a la hora
-de crear el objeto.
-
-Lo anterior, nos ayuda a observar tu capacidad de autoaprendizaje, pudiendo
-agregar a tu trabajo un elemento que lo lleva al siguiente nivel.
-
-
-## Soft Skills
-
-Puedes realizar una planificación experta teniendo en consideración la utilización de herramientas de planificación, como
-un calendario, trello, papelógrafo u otras, creando un plan paso a paso de cómo
-quiere abarcar el reto o problema. Realizando una estimación realista del
-tiempo.
-
-## Entrega
-
-El proyecto será _entregado_ subiendo tu código a GitHub (`commit`/`push`) y la
-interfaz será desplegada usando GitHub pages.
-
-## Evaluación
-
-Te aconsejamos revisar [la rúbrica](https://docs.google.com/spreadsheets/d/e/2PACX-1vSkQy1waRpQ-16sn7VogiDTy-Fz5e7OSZSYUCiHC_bkLAKYewr4L8pWJ_BG210PeULe-TjLScNQQT_x/pubhtml#)
-para ver la descripción detallada de cada _habilidad_ y cada _nivel_.
-
-### General
-
-| Característica/Habilidad | Nivel esperado |
-|--------------------------|----------------|
-| Completitud | 3
-| Investigación | 3
-| Documentación | 2
-
-### Tech
-
-| Habilidad | Nivel esperado |
-|-----------|----------------|
-| **JavaScript** | |
-| Estilo | 2
-| Nomenclatura/semántica | 2
-| Funciones/modularidad | 1
-| Estructuras de datos | 0
-| Tests | 2
-| **HTML** | |
-| Validación | 2
-| Estilo | 3
-| Semántica | 2
-| SEO | 0
-| **CSS** | |
-| DRY | 2
-| Responsive | 2
-| **SCM** | |
-| Git | 1
-| GitHub | 2
-| **CS** | |
-| Lógica | 1
-| Arquitectura | 1
-| Patrones/paradigmas | 0
-
-### UX
-
-| Habilidad | Nivel esperado |
-|-----------|----------------|
-| User Centricity | 2 |
-
-### Habilidades Blandas
-
-Para este reto queremos que intentes llegar al nivel 2 por lo menos en 5 de tus
-habilidades blandas y que tengas el nivel 1 en sólo 3 habilidades.
-
-| Habilidad | Nivel esperado |
-|-----------|----------------|
-| Planificación y organización | 2
-| Autoaprendizaje | 2
-| Solución de problemas | 2
-| Dar y recibir feedback | 2
-| Adaptabilidad | 2
-| Trabajo en equipo | 1
-| Comunicación eficaz | 1
-| Presentaciones | 1
-
-***
-
-## Primeros pasos
-
-1. Antes que nada, asegúrate de tener un :pencil: editor de texto en
-   condiciones, algo como [Atom](https://atom.io/) o
-   [Code](https://code.visualstudio.com/).
-2. Para ejecutar los comandos a continuación necesitarás una :shell:
-   [UNIX Shell](https://github.com/Laboratoria/curricula-js/tree/v2.x/topics/shell),
-   que es un programita que interpreta líneas de comando (command-line
-   interpreter) así como tener [git](https://github.com/Laboratoria/curricula-js/tree/v2.x/topics/scm/01-git)
-   instalado. Si usas un sistema operativo "UNIX-like", como GNU/Linux o MacOS,
-   ya tienes una _shell_ (terminal) instalada por defecto (y probablemente `git`
-   también). Si usas Windows puedes usar [Git bash](https://git-scm.com/download/win),
-   aunque recomendaría que consideres probar :penguin: GNU/Linux.
-3. Haz tu propio :fork_and_knife: [fork](https://help.github.com/articles/fork-a-repo/)
-   del repo de tu cohort, tus _coaches_ te compartirán un _link_ a un repo
-   privado y te darán acceso de lectura en ese repo.
-4. :arrow_down: [Clona](https://help.github.com/articles/cloning-a-repository/)
-   tu _fork_ a tu computadora (copia local).
-5. 📦 Instala las dependencias del proyecto con el comando `npm
-   install`. Esto asume que has instalado [Node.js](https://nodejs.org/) (que
-   incluye [npm](https://docs.npmjs.com/)).
-6. Si todo ha ido bien, deberías poder ejecutar las :traffic_light:
-   pruebas unitarias (unit tests) con el comando `npm test`.
-7. A codear se ha dicho! :rocket:
-
-***
-
-## Tips / Pistas
-
-A continuación un video de Michelle que te lleva a través de la fórmula
-matemática del Cifrado César y un par de cosas más que debes saber para
-resolver este proyecto. ¡Escúchala con detenimiento y sigue sus consejos! :)
-
-[![tips caesar cipher](https://img.youtube.com/vi/zd8eVrXhs7Y/0.jpg)](https://www.youtube.com/watch?v=zd8eVrXhs7Y)
-
-También te compartimos más información de lo que Michelle te ha explicado en el
-video anterior:
-
-* [Aprende más sobre `charCodeAt()`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/charCodeAt)
-* [Aprende más sobre `String.fromCharCode()`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/fromCharCode)
-* [Aprende más sobre `ASCII`](http://conceptodefinicion.de/ascii/)
-* [Documentación de NPM](https://docs.npmjs.com/)
-
-Estos son algunos tips que te pueden ayudar en la organización y realización de
-tu proyecto, teniendo en cuenta el desarrollo de tus _habilidades blandas_:
-
-* Para comenzar realiza una organización de tu proyecto, ve con qué recursos
-  cuentas y el tiempo que tienes para completarlo.
-* Si hay algo que no sepas pregunta e intenta resolverlo; puedes comenzar con
-  una búsqueda en google, luego consultando a tu squad y por último a tus
-  coaches. Si hay algo que yo no sé, otro me puede ayudar. El aprendizaje es un
-  proceso colaborativo.
-* Una vez que empieces a avanzar pide feedback, tus compañeras pueden tener
-  excelentes ideas o formas de resolver el proyecto que te pueden ayudar.
-* Cuando te topes con un problema, busca alternativas, y para eso consulta
-  diferentes fuentes.
-* Si ya te ves invirtiendo mucho tiempo en detalles debes saber priorizar y
-  seguir con lo más importante, los proyectos tienen tiempo limitado y debes
-  saber administrarlo.
-* Trabaja en equipo, pregunta e intenta completar el proyecto sin rendirte.
-* Prepara tu presentación, si no logro comunicar mis ideas a los demás no se
-  podrá apreciar todo el esfuerzo y trabajo que invertiste.
+-Nancy Mejía Gómez
