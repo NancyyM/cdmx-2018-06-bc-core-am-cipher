@@ -2,24 +2,63 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <!-- segun lo que lei es mas resposivo a moviles, es recomendable utilizarlo -->
     <title>Caesar Cipher</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">  <!-- link a paq de bootstrap -->
+    <link rel="stylesheet" href="style.css" /> 
   </head>
-  <body>
-    <div id="root">
-      <label>Ingresa mensaje a cifrar(en mayusculas)</label>
-        <input type="text" id="textencode" name="caja1"><!-- EVENTOS DEL DOM-cajas donde el usuario ingresa texto a cifrar-->
-        <input type="button" value="encode" onclick="encodejs();"><br> <!-- EVENTOS DEL DOM-al hacer clic ocurre la codificacion-->
-      <label>Ingresa mensaje a decifrar(en mayusculas)</label>
-        <input type="text" id="textdecode" name="caja2"><!-- caja donde el usuario ingresa el texto a decifrar-->
-        <input type="button" value="decode" onclick="decodejs();"><br><br><!--al hacer clic ocurre la decodificacion-->
-      <label>Ingresa tu numero favorito</label>
-      <input type="text" id="positions" name="number">
 
+  <body  background="fiesta5.png">
+    <div class="container"> <!-- clase que contiene a todos los demas divs (osea contenedor que engloba a todo lo demas) -->
+
+        <div class="form-group"> <!-- clase   ue contiene al titulo y subtitulo -->
+          <h1 style="color: white";><strong>Cifrado Cesar</strong></h1>
+          <h3 style="color: white";><em><strong>¡Bienvenido!</strong></em></h3>
+        </div>
+
+        <div class="form-group"><!-- clase que contiene a la primera parte (div de intrucciones) -->
+          <div class="shadow-lg p-3 mb-4 bg-white rounded">
+            <p style="background: #A9FF91"><strong>INSTRUCCIONES:</strong></p>
+            <p style="background: #A9FF91" style="opacity: 0.8";>¿Como jugar?<br> Ingresa tu texto a codificar/decodificar en la caja correspondiente, selecciona un número de posiciones que quieres que recorra tu texto en el alfabeto, luego acciona el boton de tu preferencia, finalmente tu resultado se mostrará en la ultima caja. Puedes copiar y pegar para hacer el proceso inverso.</p>
+          </div>
+        </div>
+
+        <div class="form-group"> <!-- clase para el area de la textarea -->
+          <textarea class="form-control" id="textencode" rows="5" style="background: #A9FF91" placeholder="Ingresa tu texto a codificar / decodificar"></textarea> <!-- caja donde el usuario ingres su texto a codificar/decodificar -->
+        </div>
+
+
+        <div class="form-group row"> <!-- clase para el offset, row es para que me apile todos mis elementos -->
+          <div class="col-sm-5"> <!-- tamaño de 5 columnas -->
+          </div>
+          <div class="col-sm-2" style="background: #A9FF91"> <!-- clase de mi select para el numero de posiciones de el select, que es de 2 columnas su tamaño -->
+            <select class="custom-select" id="positions"> <!-- offset -->
+            </select>
+          </div>
+          <div class="col-sm-5"> <!-- las 5 columnas restantes para que en total sean las 12 -->
+          </div>
+        </div>
+
+
+        <div class="form-group"> <!-- clase para las funciones -->
+          <button type="button" class="btn btn-outline-success mb-2" onclick="encodejs();">Codificar</button> <!-- boton que llama a mi funcion codificar -->
+          <button type="button" class="btn btn-outline-success mb-2" onclick="decodejs();">Decodificar</button><!-- boton que llama a mi funcion decodificar -->
+        </div>
+
+
+        <div class="form-group"> <!-- clase para el area de impresion de resultado -->
+          <div class="card" style="background: #A9FF91">
+            <div class="card-body" id="textToEncode">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group"> 
+          <button type="button" class="btn btn-outline-success mb-2" onclick="limpiar();">limpiar</button>
+        </div>
     </div>
+
     <script src="cipher.js"></script>
     <script src="index.js"></script>
   </body>
 </html>
-
-<!--GRACIAS! Atte. NANCY MEJIA GOMEZ-->
